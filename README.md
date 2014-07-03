@@ -41,6 +41,104 @@ All inline markup is clearly indicated by the use of ` x.content.x ` pattern, wh
 | `\`\`no-markup``  | `no-markup`               |
 
 
+## Block Markup
+
+### Code
+
+Four spaces of indention (or two tabs if that's how you butter your toast) designates a preformatted section. Preformats is a bit a misnomer. It really means don't apply markup and display in a monotype.
+
+These are most often used for programming code examples.
+
+```
+    for(i=0; i<10; i++) {
+      printf "HELLO AGAIN!"
+    }
+```
+
+Unlike more markup where a special brace must be used to indicate the type of content, which is then used by syntax highlighters, MILK uses a special `fig` addendum.
+
+
+```
+    for(i=0; i<10; i++) {
+      printf "HELLO AGAIN!"
+    }
+
+    fig(c++). Example program 
+```
+
+
+### Lists
+
+List can be ordered or unordered. Unorder lists ...
+
+```
+  - Unordered
+    - List
+```
+
+Ordered list can have a few different forms of enumeration. The most obvious is numeral notation.
+
+```
+  1. Ordered
+    1. List
+    2. And so on
+```
+
+Numeral notation can be multi-pointed.
+
+```
+  1.0 Ordered
+    1.1 List
+    1.2 And so on
+```
+
+The actual number is not signifficant. If you don't expect anyone to every read the markup document itself, simply use the first number repatedly.
+
+```
+  1. Ordered
+    1. Will be 1
+    1. Will be 2
+  1. Also 2
+```
+
+This applies to all list formats. 
+
+Besides numeral there is *roman enumeration*.
+
+```
+  i. Ordered
+    ii. List
+```
+
+Roman enumeration can be lower or upper case.
+
+```
+  a. Ordered
+    b. List
+```
+
+Alphabetic enumeration can also be lower or upper case.
+
+
+### Tables
+
+Tables come in two forms, simple single line per row and multi-line rows.
+
+```
+| Simple |  Table |
+|        |        |
+```
+
+```
+
+| Fat    | Big    |
+| Header | Table  |
++--------+--------+
+|        |        |
+|        |        |
+```
+
+
 ## Macros
 
 MILK supports a *macro* language, which allows the document writer full control over the final output.
