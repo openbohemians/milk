@@ -29,15 +29,16 @@ Content
 
 All inline markup is clearly indicated by the use of ` x.content.x ` pattern, where `x` is a special chracter expressing the markup style to use.
 
-| Markup                  | Result                    |
-|-------------------------|---------------------------|
-| `*.strong.*`            | `<strong>strong</strong>` |
-| `'.emphasis.'`          | `<em>emphasis</em>`       |
-| `_.underline._`         | `<u>underline</u>`        |
-| `-.strikethru.-`        | `<s>strikethru</s>`       |
-| `^.superscript.^`       | `<sup>superscript</sup>`  |
-| `~.subscript.~`         | `<sub>subscript</sub>`    |
-| <tt>\`.monotype.\`</tt> | `<tt>monotype</tt>`       |
+| Markup                     | Result                    |
+|----------------------------|---------------------------|
+| `*.strong.*`               | `<strong>strong</strong>` |
+| `'.emphasis.'`             | `<em>emphasis</em>`       |
+| `".quote."`                | `<q>quote</q>`            |
+| `_.underline._`            | `<u>underline</u>`        |
+| `-.strikethru.-`           | `<s>strikethru</s>`       |
+| `^.superscript.^`          | `<sup>superscript</sup>`  |
+| `~.subscript.~`            | `<sub>subscript</sub>`    |
+| <tt>\`.monotype.\`</tt>    | `<tt>monotype</tt>`       |
 | <tt>\`\`no-markup\`\`</tt> | `no-markup`               |
 
 
@@ -81,6 +82,14 @@ Unlike more markup where a special brace must be used to indicate the type of co
     fig(c++). Example program 
 ```
 
+### Block Quotes
+
+Block quotes ...
+
+```
+> This is a
+> block quote.
+```
 
 ### Lists
 
