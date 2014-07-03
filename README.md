@@ -7,7 +7,7 @@ Other formats only partially compatible with Markdown go to great lenghts to off
 
 ## Structure
 
-All MILK documents are structured as a hierarchy of ordered lists. These teirs are designated by the use of headers. Consider the following example.
+MILK documents follow the [Perfect Document Structure] design pattern. This means all MILK documents are structured as a hierarchy of ordered lists. These tiers are designated by the use of headers. Consider the following example.
 
 ```
 = Header 1
@@ -42,6 +42,21 @@ All inline markup is clearly indicated by the use of ` x.content.x ` pattern, wh
 
 
 ## Block Markup
+
+### Section Tiers
+
+Section tiers can be *plain* or *enumerated*.
+
+```
+= Plain
+```
+
+```
+# Enumerated
+```
+
+While the style of enumeration can be adjusted via stylesheets, the standard format is multi-point. So, the first `#` will be rendered as `1` and its first `##` will be rendered as `1.1`.
+
 
 ### Code
 
@@ -138,6 +153,14 @@ Tables come in two forms, simple single line per row and multi-line rows.
 |        |        |
 ```
 
+## Classifying Markup
+
+Most of the time we do not need to get vey fancy with our customizations. A simple extra class will generally do the job. To this end, any text section can be *classified* simply by sarting the text with a `.classname`.
+
+```
+.important This is an important paragraph.
+```
+
 
 ## Macros
 
@@ -156,19 +179,10 @@ TODO: Should the macro language be XML/XHTML-subset or a HAML like syntax?
 As you can see the macro language is just XML/HTML. In fact, the macro langauge is, at it's base, simply a safe subset of HTML.
 
 
-## Implicit Spans
+### Implicit Spans
 
 ```
 This is <color=green>green</>.
-```
-
-
-## Classifying Markup
-
-Most of the time we do not need to get vey fancy with our customizations. A simple extra class will generally do the job. To this end, any text section can be *classified* simply by sarting the text with a `.classname`.
-
-```
-.important This is an important paragraph.
 ```
 
 
