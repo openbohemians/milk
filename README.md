@@ -37,8 +37,8 @@ All inline markup is clearly indicated by the use of ` x.content.x ` pattern, wh
 | `-.strikethru.-`  | `<s>strikethru</s>        |
 | `^.superscript.^` | `<sup>superscript</sup>`  |
 | `~.subscript.~`   | `<sub>subscript</sub>`    |
-| ``.monotype.``    | `<tt>monotype</tt>`       |
-
+| `\`.monotype.``   | `<tt>monotype</tt>`       |
+| `\`\`no-markup``  | `no-markup`               |
 
 
 ## Macros
@@ -104,7 +104,7 @@ But what if we want to modify the `ol` element that a section header creates? Pe
 = Big Header <^ol display=none/> 
 ```
 
-The `^` symbol indicates a backward lookup of the given tag. If we left the `ol` out if would look to first previous tag, which in this case would be <li>, which would have a very different effect. Conversely we can have the tag look ahead using a `+` character.
+The `^` symbol indicates a backward lookup of the given tag. If we left the `ol` out if would look to first previous tag, which in this case would be `<li>`, which would have a very different effect. Conversely we can have the tag look ahead using a `+` character.
 
 ```
 <+ol display=none/>
@@ -120,4 +120,4 @@ It is even possible to augment all the tags fo a given tag using `<*tag ...>` no
 
 To escape `<` and `>` simply repeat them, i.e. `<<` becomes `<` and `>>` becomes `>`.
 
-To escape inline markup wrap the content in no-markup markup, i.e. ```*.foo.*```.
+To escape inline markup wrap the content in no-markup markup, i.e. `\`\`*.foo.*```.
