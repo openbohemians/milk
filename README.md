@@ -29,16 +29,16 @@ Content
 
 All inline markup is clearly indicated by the use of ` x.content.x ` pattern, where `x` is a special chracter expressing the markup style to use.
 
-| Markup            | Result                    |
-|-------------------|---------------------------|
-| `*.strong.*`      | `<strong>strong</strong>` |
-| `'.emphasis.*     | `<em>emphasis</em>`       |
-| `_.underline._`   | `<u>underline</u>`        |
-| `-.strikethru.-`  | `<s>strikethru</s>        |
-| `^.superscript.^` | `<sup>superscript</sup>`  |
-| `~.subscript.~`   | `<sub>subscript</sub>`    |
-| `\`.monotype.``   | `<tt>monotype</tt>`       |
-| `\`\`no-markup``  | `no-markup`               |
+| Markup                  | Result                    |
+|-------------------------|---------------------------|
+| `*.strong.*`            | `<strong>strong</strong>` |
+| `'.emphasis.'`          | `<em>emphasis</em>`       |
+| `_.underline._`         | `<u>underline</u>`        |
+| `-.strikethru.-`        | `<s>strikethru</s>`       |
+| `^.superscript.^`       | `<sup>superscript</sup>`  |
+| `~.subscript.~`         | `<sub>subscript</sub>`    |
+| <tt>`.monotype.`</tt>   | `<tt>monotype</tt>`       |
+| <tt>``no-markup``</tt>  | `no-markup`               |
 
 
 ## Block Markup
