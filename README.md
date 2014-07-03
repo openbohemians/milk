@@ -9,13 +9,13 @@ Other formats only partially compatible with Markdown go to great lenghts to off
 
 MILK documents follow the [Perfect Document Structure] design pattern. This means all MILK documents are structured as a hierarchy of ordered lists. These tiers are designated by the use of headers. Consider the following example.
 
-```
+```rdoc
 = Header 1
 == Header 2
 Content
 ```
 
-```
+```html
 <ol class="no-enum"><li>
   <h1 class="title">Header 1</h1>
   <ol><li>
@@ -26,6 +26,8 @@ Content
 ```
 
 ## Inline Markup
+
+### Style
 
 All inline markup is clearly indicated by the use of ` x.content.x ` pattern, where `x` is a special chracter expressing the markup style to use.
 
@@ -40,6 +42,38 @@ All inline markup is clearly indicated by the use of ` x.content.x ` pattern, wh
 | `~.subscript.~`            | `<sub>subscript</sub>`    |
 | <tt>\`.monotype.\`</tt>    | `<tt>monotype</tt>`       |
 | <tt>\`\`no-markup\`\`</tt> | `no-markup`               |
+
+
+### References / Links
+
+**TODO** <i>I am little but hesitant to move away from the traditional wiki-wiki style of `[[foo]]` here, and yet I have always felt it would a good thing if links were more like real references in technical papers. This still needs some work and some thought.</i>
+
+
+```
+Somewhere over the rainbow(^https://en.wikipedia.org/wiki/Rainbow).
+```
+
+If the link has whitespaces a visibile enclosing bracket will suffice.
+
+```
+Somewhere over the rainbow (Schomer 2012)^(https://en.wikipedia.org/wiki/Rainbow).
+```
+
+Or use backticks for invisible grouping.
+
+```
+Rockstar `Alan Turing`(^https://en.wikipedia.org/wiki/Alan_Turing)
+```
+
+### Notes
+
+**TODO**
+
+Section notes and document footnotes.
+
+```
+This is not to be taken lightly. ^.1.^(#1)
+```
 
 
 ## Block Markup
