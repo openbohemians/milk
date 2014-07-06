@@ -112,8 +112,7 @@ Unlike more markup where a special brace must be used to indicate the type of co
     for(i=0; i<10; i++) {
       printf "HELLO AGAIN!"
     }
-
-    fig(c++). Example program 
+    fig. 1 (c++) Classic Hello World
 ```
 
 ### Block Quotes
@@ -180,20 +179,47 @@ Alphabetic enumeration can also be lower or upper case.
 
 ### Tables
 
-Tables come in two forms, simple single line per row and multi-line rows.
+Tables come in two forms, simple single-line rows and multi-line rows.
 
 ```
-| Simple |  Table |
-|        |        |
+------- -------
+Cell A1 Cell B1
+Cell A2 Cell B2
+------- -------
 ```
 
 ```
+======== ========
+Header A Header B
+======== ========
+Cell A1  Cell B1
+Cell A2  Cell B2
+-------- --------
+Foot A   Foot B
+======== ========
+```
 
-| Fat    | Big    |
-| Header | Table  |
+An optional feature, allows simple spreadsheet formulae to be processed.
+
+```
+------- --------
+Gas          50
+Rent        200
+------- --------
+TOTAL    =A2+B2
+------- --------
+```
+
+**Grid Tables**. Arbitary sized cells can be create using *grid tables*, which are distringuished by the use of plus signs in cell corners.
+
+```
++========+========+
+| Fat    | And    |
+| Header | Again  |
++========+========+
+| Big    |        |
+|        | Table  |
 +--------+--------+
-|        |        |
-|        |        |
 ```
 
 ## Classifying Markup
@@ -207,19 +233,17 @@ Most of the time we do not need to get vey fancy with our customizations. A simp
 
 ## Macros
 
-MILK supports a *macro* language, which allows the document writer full control over the final output.
+MILK supports a *macro* language, which allows the document a great deal of control over the final output. The sytax of the language is a safe subset/superset of HTML.
 
-For example imagine a MILK plugin for figlet.
+TODO: Should the macro language be XML/XHTML-subset or a HAML like syntax?
+
+Macros can also come in the from of plugins for a particular implementation, which allows for a wide variety of external solutions to be embedded into MILK documents. For example, we can easily imagine a plugin for (figlet)[].
 
 ```
 <figlet font=slant size=10>
 THIS IS HUGE! 
 </figlet>
 ```
-
-TODO: Should the macro language be XML/XHTML-subset or a HAML like syntax?
-
-As you can see the macro language is just XML/HTML. In fact, the macro langauge is, at it's base, simply a safe subset of HTML.
 
 
 ### Implicit Spans
@@ -231,7 +255,7 @@ This is <color=green>green</>.
 
 ## Customizing Markup
 
-**IMPORTANT** Customizing markup is not something to be doen lightly!!! Use it sparingly and only when you have to other good option. It is much better to simply uses classes and modify a sites stylesheets to produce the desired results. In fact, we debated whether it was even wise to allow this level of customization. Implementors may wish to make it a separate API option which can be turned on or off.
+**IMPORTANT** Customizing markup is not something to be done lightly!!! Use it sparingly and only when you have no other good option. It is much better to simply uses classes and modify a sites stylesheets to produce the desired results. In fact, we debated whether it was even wise to allow this level of customization. Implementors may wish to make it a separate API option which can be turned on or off.
 
 For fancier customizations we can use our trusy macro langauge. Customizing any markup tags is as easy as using *relative tagging*. By relative tagging we simply mean that instead of creating a new element of a given tag, we are referencing a another tag which is to be augmented. 
 
