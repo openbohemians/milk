@@ -31,20 +31,20 @@ Content
 
 All inline markup is clearly indicated by the use of ` x.content.x ` pattern, where `x` is a special chracter expressing the markup style to use.
 
-| Markup                     | Result                    |
-|----------------------------|---------------------------|
-| `*.strong.*`               | `<strong>strong</strong>` |
-| `'.emphasis.'`             | `<em>emphasis</em>`       |
-| `".quote."`                | `<q>quote</q>`            |
-| `_.underline._`            | `<u>underline</u>`        |
-| `-.strikethru.-`           | `<s>strikethru</s>`       |
-| `^.superscript.^`          | `<sup>superscript</sup>`  |
-| `~.subscript.~`            | `<sub>subscript</sub>`    |
-| <tt>\`.monotype.\`</tt>    | `<tt>monotype</tt>`       |
-| <tt>\`\`no-markup\`\`</tt> | `no-markup`               |
+| Markup                     | Result                    | Render                 |
+|----------------------------|---------------------------|------------------------|
+| `*.strong.*`               | `<strong>strong</strong>` | **strong**             |
+| `'.emphasis.'`             | `<em>emphasis</em>`       | *emphasis*             |
+| `".quote."`                | `<q>quote</q>`            | <q>quote</q>           |
+| `_.underline._`            | `<u>underline</u>`        | <u>underline</u>       |
+| `-.strikethru.-`           | `<s>strikethru</s>`       | <s>strikethru</s>      |
+| `^.superscript.^`          | `<sup>superscript</sup>`  | <sup>superscript</sup> |
+| `~.subscript.~`            | `<sub>subscript</sub>`    | <sub>subscript</sub>   |
+| <tt>\`.monotype.\`</tt>    | `<tt>monotype</tt>`       | <tt>monotype</tt>      |
+| <tt>\`\`no-markup\`\`</tt> | `no-markup`               | no-markup              |
 
 
-### References / Links
+### Hyperlinks
 
 **TODO** <i>I am little but hesitant to move away from the traditional wiki-wiki style of `[[foo]]` here, and yet I have always felt it would a good thing if links were more like real references in technical papers. This still needs some work and some thought.</i>
 
@@ -64,6 +64,10 @@ Or use backticks for invisible grouping.
 ```
 Rockstar `Alan Turing`(^https://en.wikipedia.org/wiki/Alan_Turing)
 ```
+
+### References
+
+**TODO**
 
 ### Notes
 
@@ -222,7 +226,36 @@ TOTAL    =A2+B2
 +--------+--------+
 ```
 
-## Classifying Markup
+## Metadata
+
+Documents can be prefaced or appended with metadata. MILK supports simple YAML and JSON.
+
+When a MILK document is parsed the first procedure is to strip off any front or back matter.
+
+**YAML metadata**. 
+
+```
+---
+key1: value1
+key2: value2
+...
+```
+
+**JSON metadata.**
+
+```
+--- !json
+{
+  "key1": "value1",
+  "key2": "value2"
+}
+...
+```
+
+Documents should use either front matter or back matter and not both. But if both are given, then front matter takes precedence over back matter if any key paths conflict.
+
+
+### Classifying Markup
 
 Most of the time we do not need to get vey fancy with our customizations. A simple extra class will generally do the job. To this end, any text section can be *classified* simply by sarting the text with a `.classname`.
 
