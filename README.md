@@ -50,33 +50,33 @@ All inline markup is clearly indicated by the use of ` x.content.x ` pattern, wh
 
 
 ```
-Somewhere over the rainbow (^https://en.wikipedia.org/wiki/Rainbow).
+Somewhere over the rainbow (#https://en.wikipedia.org/wiki/Rainbow).
 ```
 
 If the link label has whitespaces any visibile enclosing brackets will automatically be used.
 
 ```
-Somewhere over the rainbow (Schomer 2012) (^https://en.wikipedia.org/wiki/Rainbow).
+Somewhere over the rainbow (Schomer 2012) (#https://en.wikipedia.org/wiki/Rainbow).
 ```
 
 Or use backticks for invisible grouping.
 
 ```
-Rockstar `Alan Turing` (^https://en.wikipedia.org/wiki/Alan_Turing)
+Rockstar `Alan Turing` (#https://en.wikipedia.org/wiki/Alan_Turing)
 ```
 
 ### References
 
 **TODO**
 
-### Notes
+### Footnotes
 
-**TODO**
-
-Section notes and document footnotes.
+Footnotes can be per-section or per-document.
 
 ```
-This is not to be taken lightly. ^.1.^(#1)
+This is not to be taken lightly. (#1)
+
+[1] Schomer 2102
 ```
 
 
