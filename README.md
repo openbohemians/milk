@@ -33,14 +33,14 @@ All inline markup is clearly indicated by the use of ` x.content.x ` pattern, wh
 
 | Markup                     | Result                    | Render                 |
 |----------------------------|---------------------------|------------------------|
-| `*'strong'*`               | `<strong>strong</strong>` | **strong**             |
+| `'*strong*'`               | `<strong>strong</strong>` | **strong**             |
 | `''emphasis''`             | `<em>emphasis</em>`       | *emphasis*             |
-| `"'quote'"`                | `<q>quote</q>`            | <q>quote</q>           |
-| `_'underline'_`            | `<u>underline</u>`        | <u>underline</u>       |
-| `-'strikethru'-`           | `<s>strikethru</s>`       | <s>strikethru</s>      |
-| `^'superscript'^`          | `<sup>superscript</sup>`  | <sup>superscript</sup> |
-| `,'subscript',`            | `<sub>subscript</sub>`    | <sub>subscript</sub>   |
-| <tt>\`.monotype.\`</tt>    | `<tt>monotype</tt>`       | <tt>monotype</tt>      |
+| `'"quote"'`                | `<q>quote</q>`            | <q>quote</q>           |
+| `'_underline_'`            | `<u>underline</u>`        | <u>underline</u>       |
+| `'-strikethru-'`           | `<s>strikethru</s>`       | <s>strikethru</s>      |
+| `'^superscript^'`          | `<sup>superscript</sup>`  | <sup>superscript</sup> |
+| `',subscript,'`            | `<sub>subscript</sub>`    | <sub>subscript</sub>   |
+| <tt>'\`monotype\`'</tt>    | `<tt>monotype</tt>`       | <tt>monotype</tt>      |
 | <tt>\`\`no-markup\`\`</tt> | `no-markup`               | no-markup              |
 
 
@@ -80,7 +80,7 @@ Footnotes can be per-section or per-document.
 ```
 This is not to be taken lightly. (1)
 
-^1 Unless it *'exists'* to be taken lightly.
+^1 Unless it '*exists*' to be taken lightly.
 ```
 
 
@@ -207,7 +207,7 @@ Headers and footers ...
 
 ```
 ------------ ------------
-*.Header A.* *.Header B.*
+! Header A ! ! Header B !
 ------------ ------------
 Cell A1      Cell B1
 Cell A2      Cell B2
@@ -230,10 +230,10 @@ TOTAL    =A2+B2
 **Grid Tables**. Arbitary sized cells can be create using *grid tables*, which are distringuished by the use of plus signs in cell corners.
 
 ```
-+========+========+
-| Fat    | And    |
-| Header | Again  |
-+========+========+
++--------+--------+
+! Fat    ! And    !
+! Header ! Again  !
++--------+--------+
 | Big    |        |
 |        | Table  |
 +--------+--------+
