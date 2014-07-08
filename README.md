@@ -16,13 +16,15 @@ Content
 ```
 
 ```html
-<ol class="no-enum"><li>
+<article class="document">
+<ol><li>
   <h1 class="title">Header 1</h1>
   <ol><li>
     <h2 class="title">Header 2</h2>
     Content
   </li></ol>
 </li></ol>
+</article>
 ```
 
 ## Inline Markup
@@ -284,6 +286,8 @@ Most of the time we do not need to get vey fancy with our customizations. A simp
 
 
 ### Implicit Spans
+
+Using HTML style markup without specific tag defaults to a `<span>`.
 
 ```
 This is <color=green>green</>.
