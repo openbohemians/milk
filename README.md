@@ -56,7 +56,7 @@ Somewhere over the rainbow (#https://en.wikipedia.org/wiki/Rainbow).
 If the link label has whitespaces any visibile enclosing brackets will automatically be used.
 
 ```
-Somewhere over the rainbow (Schomer 2012) (#https://en.wikipedia.org/wiki/Rainbow).
+Somewhere over the rainbow (#Schomer 2012) (#https://en.wikipedia.org/wiki/Rainbow).
 ```
 
 Or use backticks for invisible grouping.
@@ -67,7 +67,11 @@ Rockstar `Alan Turing` (#https://en.wikipedia.org/wiki/Alan_Turing)
 
 ### References
 
-**TODO**
+```
+She was somewhere over the rainbow (# Baum 1900)
+
+:# Baum 1900, https://en.wikipedia.org/wiki/Rainbow
+```
 
 ### Footnotes
 
