@@ -132,11 +132,16 @@ Quotations, also kown as *block quotes* translate to the `<blockquote>` HTML tag
 
 ### Lists
 
-List can be ordered or unordered. Unorder lists ...
+List can be ordered or unordered. Unorder lists com in two formats, light bullet and heavy bullet.
 
 ```
   - Unordered
     - List
+```
+
+```
+  * Unordered
+    * List
 ```
 
 Ordered list can have a few different forms of enumeration. The most obvious is numeral notation.
@@ -281,7 +286,7 @@ This is <color=green>green</>.
 ```
 
 
-## Tag Augmentation
+### Tag Augmentation
 
 **IMPORTANT** Customizing markup is not something to be done lightly!!! Use it sparingly and only when you have no other good option. It is much better to simply uses classes and modify a sites stylesheets to produce the desired results. In fact, we debated whether it was even wise to allow this level of customization. Implementors may wish to make it a separate API option which can be turned on or off.
 
@@ -325,17 +330,29 @@ It is even possible to augment all the tags fo a given tag using `<*tag ...>` no
 
 ## Macros
 
-MILK supports a *macro* language, which allows the document a great deal of control over the final output. The sytax of the language is a safe subset/superset of HTML.
+MILK supports a *macro* language, which allows the document a great deal of control over the final output. Macro usage is easily identified becuase more usage is in the form of XML/XHTML. So, for instance `<b>foo</b>` is using a macro, in this example a macro called `b`, and it just so happens that this macro translates verbtim to HTML.
 
-TODO: Should the macro language be XML/XHTML-subset or a HAML like syntax?
+MILK hase a built-in set of macros based on a safe subset of HTML. It also provides a few some additional macros.... Beyond the standard macros, MILK documents can also define custom macros, or gain new macros via plugins.
 
-Macros can also come in the from of plugins for a particular implementation, which allows for a wide variety of external solutions to be embedded into MILK documents. For example, we can easily imagine a plugin for (figlet)[].
+**Plugins**. Macros can come from of plugins. Plugins are particular to an implementation. Plugins allow for a diverse set of external solutions to be embedded into MILK documents. For example, we can easily imagine a plugin for [figlet](http://www.figlet.org/).
 
 ```
 <figlet font=slant size=10>
 THIS IS HUGE! 
 </figlet>
 ```
+
+Macros can also be written in YAML format.
+
+```
+--- !figlet
+font: slant
+size: 10
+   =: THIS IS HUGE!
+...
+```
+
+YAML format is better when the macro is data driven, where as XML/HTML syntax works well when the macro is content oriented.
 
 
 ## Escape Characters
