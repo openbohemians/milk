@@ -50,19 +50,19 @@ All inline markup is clearly indicated by the use of ` x.content.x ` pattern, wh
 
 
 ```
-Somewhere over the rainbow(^https://en.wikipedia.org/wiki/Rainbow).
+Somewhere over the rainbow (^https://en.wikipedia.org/wiki/Rainbow).
 ```
 
-If the link has whitespaces a visibile enclosing bracket will suffice.
+If the link label has whitespaces any visibile enclosing brackets will automatically be used.
 
 ```
-Somewhere over the rainbow (Schomer 2012)^(https://en.wikipedia.org/wiki/Rainbow).
+Somewhere over the rainbow (Schomer 2012) (^https://en.wikipedia.org/wiki/Rainbow).
 ```
 
 Or use backticks for invisible grouping.
 
 ```
-Rockstar `Alan Turing`(^https://en.wikipedia.org/wiki/Alan_Turing)
+Rockstar `Alan Turing` (^https://en.wikipedia.org/wiki/Alan_Turing)
 ```
 
 ### References
@@ -97,9 +97,11 @@ Section tiers can be *plain* or *enumerated*.
 While the style of enumeration can be adjusted via stylesheets, the standard format is multi-point. So, the first `#` will be rendered as `1` and its first `##` will be rendered as `1.1`.
 
 
-### Code
+### Literals
 
-Four spaces of indention (or two tabs if that's how you butter your toast) designates a preformatted section. Preformats is a bit a misnomer. It really means don't apply markup and display in a monotype.
+TODO: Separate Code literals from general literals?
+
+Four spaces of indention (or two tabs if that's how you butter your toast) designates a preformatted *literal* section. This translates into the `<pre>` HTML tag. Preformat is a bit a misnomer --it basically means don't apply markup and display in a monotype.
 
 These are most often used for programming code examples.
 
@@ -119,9 +121,9 @@ Unlike more markup where a special brace must be used to indicate the type of co
     fig. 1 (c++) Classic Hello World
 ```
 
-### Block Quotes
+### Quotations
 
-Block quotes ...
+Quotations, also kown as *block quotes* translate to the `<blockquote>` HTML tag. They are essentially `div` elements which have a style that sets them apart and helps the reader recognize they are quotes.
 
 ```
 > This is a
@@ -183,7 +185,7 @@ Alphabetic enumeration can also be lower or upper case.
 
 ### Tables
 
-Tables come in two forms, simple single-line rows and multi-line rows.
+Tables come in two forms, simple single-line cell rows and multi-line cell rows.
 
 ```
 ------- -------
@@ -192,15 +194,17 @@ Cell A2 Cell B2
 ------- -------
 ```
 
+Headers and footers ...
+
 ```
-======== ========
-Header A Header B
-======== ========
-Cell A1  Cell B1
-Cell A2  Cell B2
--------- --------
-Foot A   Foot B
-======== ========
+------------ ------------
+*.Header A.* *.Header B.*
+------------ ------------
+Cell A1      Cell B1
+Cell A2      Cell B2
+------------ ------------
+Footer A     Footer B
+------------ ------------
 ```
 
 An optional feature, allows simple spreadsheet formulae to be processed.
@@ -230,7 +234,7 @@ TOTAL    =A2+B2
 
 Documents can be prefaced or appended with metadata. MILK supports simple YAML and JSON.
 
-When a MILK document is parsed the first procedure is to strip off any front or back matter.
+When a MILK document is parsed the first procedure is to strip off any front or back matter and store the settings for variable lookup.
 
 **YAML metadata**. 
 
@@ -254,28 +258,19 @@ key2: value2
 
 Documents should use either front matter or back matter and not both. But if both are given, then front matter takes precedence over back matter if any key paths conflict.
 
+Using metadata in a document is done using `\(key1)`.
 
-### Classifying Markup
+TODO: Use `\(key1)` or `(\key1)` ?
+
+
+## Style
+
+### Classes
 
 Most of the time we do not need to get vey fancy with our customizations. A simple extra class will generally do the job. To this end, any text section can be *classified* simply by sarting the text with a `.classname`.
 
 ```
 .important This is an important paragraph.
-```
-
-
-## Macros
-
-MILK supports a *macro* language, which allows the document a great deal of control over the final output. The sytax of the language is a safe subset/superset of HTML.
-
-TODO: Should the macro language be XML/XHTML-subset or a HAML like syntax?
-
-Macros can also come in the from of plugins for a particular implementation, which allows for a wide variety of external solutions to be embedded into MILK documents. For example, we can easily imagine a plugin for (figlet)[].
-
-```
-<figlet font=slant size=10>
-THIS IS HUGE! 
-</figlet>
 ```
 
 
@@ -286,7 +281,7 @@ This is <color=green>green</>.
 ```
 
 
-## Customizing Markup
+## Tag Augmentation
 
 **IMPORTANT** Customizing markup is not something to be done lightly!!! Use it sparingly and only when you have no other good option. It is much better to simply uses classes and modify a sites stylesheets to produce the desired results. In fact, we debated whether it was even wise to allow this level of customization. Implementors may wish to make it a separate API option which can be turned on or off.
 
@@ -326,6 +321,21 @@ The `^` symbol indicates a backward lookup of the given tag. If we left the `ol`
 It is even possible to augment all the tags fo a given tag using `<*tag ...>` notation. But these should alwasy be put at the top or bottom of a document, and usually the bottom to keep them out of the way.
 
 **IMPORTANT** The relative taggin notation is still be fleshed out and could very well change.
+
+
+## Macros
+
+MILK supports a *macro* language, which allows the document a great deal of control over the final output. The sytax of the language is a safe subset/superset of HTML.
+
+TODO: Should the macro language be XML/XHTML-subset or a HAML like syntax?
+
+Macros can also come in the from of plugins for a particular implementation, which allows for a wide variety of external solutions to be embedded into MILK documents. For example, we can easily imagine a plugin for (figlet)[].
+
+```
+<figlet font=slant size=10>
+THIS IS HUGE! 
+</figlet>
+```
 
 
 ## Escape Characters
