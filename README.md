@@ -7,7 +7,7 @@ Other formats only partially compatible with Markdown go to great lenghts to off
 
 ## Structure
 
-MILK documents follow the [Perfect Document Structure] design pattern. This means all MILK documents are structured as a hierarchy of ordered lists. These tiers are designated by the use of headers. Consider the following example.
+MILK documents follow the [Perfect Document Structure](https://github.com/openbohemians/milk/wiki/Perfect-Document-Structure) design pattern. This means all MILK documents are structured as a hierarchy of ordered lists. These tiers are designated by the use of headers. Consider the following example.
 
 ```rdoc
 = Header 1
@@ -33,13 +33,13 @@ All inline markup is clearly indicated by the use of ` x.content.x ` pattern, wh
 
 | Markup                     | Result                    | Render                 |
 |----------------------------|---------------------------|------------------------|
-| `*.strong.*`               | `<strong>strong</strong>` | **strong**             |
-| `'.emphasis.'`             | `<em>emphasis</em>`       | *emphasis*             |
-| `".quote."`                | `<q>quote</q>`            | <q>quote</q>           |
-| `_.underline._`            | `<u>underline</u>`        | <u>underline</u>       |
-| `-.strikethru.-`           | `<s>strikethru</s>`       | <s>strikethru</s>      |
-| `^.superscript.^`          | `<sup>superscript</sup>`  | <sup>superscript</sup> |
-| `~.subscript.~`            | `<sub>subscript</sub>`    | <sub>subscript</sub>   |
+| `*'strong'*`               | `<strong>strong</strong>` | **strong**             |
+| `''emphasis''`             | `<em>emphasis</em>`       | *emphasis*             |
+| `"'quote'"`                | `<q>quote</q>`            | <q>quote</q>           |
+| `_'underline'_`            | `<u>underline</u>`        | <u>underline</u>       |
+| `-'strikethru'-`           | `<s>strikethru</s>`       | <s>strikethru</s>      |
+| `^'superscript'^`          | `<sup>superscript</sup>`  | <sup>superscript</sup> |
+| `,'subscript',`            | `<sub>subscript</sub>`    | <sub>subscript</sub>   |
 | <tt>\`.monotype.\`</tt>    | `<tt>monotype</tt>`       | <tt>monotype</tt>      |
 | <tt>\`\`no-markup\`\`</tt> | `no-markup`               | no-markup              |
 
@@ -50,27 +50,27 @@ All inline markup is clearly indicated by the use of ` x.content.x ` pattern, wh
 
 
 ```
-Somewhere over the rainbow (#https://en.wikipedia.org/wiki/Rainbow).
+Somewhere over the rainbow ^(https://en.wikipedia.org/wiki/Rainbow).
 ```
 
 If the link label has whitespaces any visibile enclosing brackets will automatically be used.
 
 ```
-Somewhere over the rainbow (#Schomer 2012) (#https://en.wikipedia.org/wiki/Rainbow).
+Somewhere over the rainbow (Schomer 2012) ^(https://en.wikipedia.org/wiki/Rainbow).
 ```
 
 Or use backticks for invisible grouping.
 
 ```
-Rockstar `Alan Turing` (#https://en.wikipedia.org/wiki/Alan_Turing)
+Rockstar `Alan Turing` (^https://en.wikipedia.org/wiki/Alan_Turing)
 ```
 
 ### References
 
 ```
-She was somewhere over the rainbow (# Baum 1900)
+She was somewhere over the rainbow (Baum 1900)
 
-:# Baum 1900, https://en.wikipedia.org/wiki/Rainbow
+^Baum 1900, https://en.wikipedia.org/wiki/Rainbow
 ```
 
 ### Footnotes
@@ -78,9 +78,9 @@ She was somewhere over the rainbow (# Baum 1900)
 Footnotes can be per-section or per-document.
 
 ```
-This is not to be taken lightly. (#1)
+This is not to be taken lightly. (1)
 
-[1] Schomer 2102
+^1 Unless it *'exists'* to be taken lightly.
 ```
 
 
