@@ -194,6 +194,23 @@ Roman enumeration can be lower or upper case.
 Alphabetic enumeration can also be lower or upper case.
 
 
+### Definition Lists
+
+
+```
+fish:: Descipriot of Fish.
+eggs:: Description of Eggs.
+```
+
+becomes
+
+```html
+<dl>
+<dt>fish</dt><dd>Description of fish.</dd>
+<dt>eggs</dt><dd>Description of fish.</dd>
+</dl>
+```
+
 ### Tables
 
 Tables come in two forms, simple single-line cell rows and multi-line cell rows.
