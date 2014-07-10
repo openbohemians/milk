@@ -31,18 +31,18 @@ Content
 
 ### Style
 
-All inline markup is clearly indicated by the use of ` x.content.x ` pattern, where `x` is a special chracter expressing the markup style to use.
+All inline markup is clearly indicated by the use of ` x'content'x ` pattern, where `x` is a special chracter expressing the markup style to use.
 
 | Markup                     | Result                    | Render                 |
 |----------------------------|---------------------------|------------------------|
-| `'*strong*'`               | `<strong>strong</strong>` | **strong**             |
-| `''emphasis''`             | `<em>emphasis</em>`       | *emphasis*             |
-| `'"quote"'`                | `<q>quote</q>`            | <q>quote</q>           |
-| `'_underline_'`            | `<u>underline</u>`        | <u>underline</u>       |
-| `'-strikethru-'`           | `<s>strikethru</s>`       | <s>strikethru</s>      |
-| `'^superscript^'`          | `<sup>superscript</sup>`  | <sup>superscript</sup> |
-| `',subscript,'`            | `<sub>subscript</sub>`    | <sub>subscript</sub>   |
-| <tt>'\`monotype\`'</tt>    | `<tt>monotype</tt>`       | <tt>monotype</tt>      |
+| `*'bold'*`                 | `<b>strong</b>`           | **bold**               |
+| `''italic''`               | `<i>italic</i>`           | *emphasis*             |
+| `"'quote'"`                | `<q>quote</q>`            | <q>quote</q>           |
+| `_.underline._`            | `<u>underline</u>`        | <u>underline</u>       |
+| `-'strikethru'-`           | `<s>strikethru</s>`       | <s>strikethru</s>      |
+| `^'superscript'^`          | `<sup>superscript</sup>`  | <sup>superscript</sup> |
+| `_'subscript'_`            | `<sub>subscript</sub>`    | <sub>subscript</sub>   |
+| <tt>\`'monotype'\`</tt>    | `<tt>monotype</tt>`       | <tt>monotype</tt>      |
 | <tt>\`\`no-markup\`\`</tt> | `no-markup`               | no-markup              |
 
 
