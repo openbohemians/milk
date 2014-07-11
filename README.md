@@ -33,17 +33,17 @@ Content
 
 All inline markup is clearly indicated by the use of ` x'content'x ` pattern, where `x` is a special chracter expressing the markup style to use.
 
-| Markup                     | Result                    | Render                 |
-|----------------------------|---------------------------|------------------------|
-| `*.bold.*`                 | `<b>strong</b>`           | **bold**               |
-| `'.italic.'`               | `<i>italic</i>`           | *emphasis*             |
-| `".quote."`                | `<q>quote</q>`            | <q>quote</q>           |
-| `_.underline._`            | `<u>underline</u>`        | <u>underline</u>       |
-| `-.strikethru.-`           | `<s>strikethru</s>`       | <s>strikethru</s>      |
-| `^.superscript.^`          | `<sup>superscript</sup>`  | <sup>superscript</sup> |
-| `~.subscript.~`            | `<sub>subscript</sub>`    | <sub>subscript</sub>   |
-| <tt>\`.monotype.\`</tt>    | `<tt>monotype</tt>`       | <tt>monotype</tt>      |
-| <tt>\`\`no-markup\`\`</tt> | `no-markup`               | no-markup              |
+| Markup                     | Markdown                   | Result                   | Render                 |
+|----------------------------|----------------------------|--------------------------|------------------------|
+| `*.bold.*`                 | `*bold*`                   | `<b>strong</b>`          | **bold**               |
+| `'.italic.'`               | `+italic+'`                | `<i>italic</i>`          | *emphasis*             |
+| `".quote."`                | `"quotes"`                 | `<q>quote</q>`           | <q>quote</q>           |
+| `_.underline._`            | `_underline_`              | `<u>underline</u>`       | <u>underline</u>       |
+| `-.strikethru.-`           | `~strikethru~`             | `<s>strikethru</s>`      | <s>strikethru</s>      |
+| `^.superscript.^`          | `^superscript^`            | `<sup>superscript</sup>` | <sup>superscript</sup> |
+| `~.subscript.~`            | `,subscript,`              | `<sub>subscript</sub>`   | <sub>subscript</sub>   |
+| <tt>\`.monotype.\`</tt>    | <tt>\`monotype\`</tt>      | `<tt>monotype</tt>`      | `monotype`             |
+| <tt>\`\`no-markup\`\`</tt> | <tt>\`\`no-markup\`\`</tt> | `no-markup`              | no-markup              |
 
 
 ### Hyperlinks
@@ -58,7 +58,7 @@ Somewhere over the rainbow ^(https://en.wikipedia.org/wiki/Rainbow).
 If the link label has whitespaces any visibile enclosing brackets will automatically be used.
 
 ```
-Somewhere over the rainbow (Schomer 2012) ^(https://en.wikipedia.org/wiki/Rainbow).
+Somewhere over the rainbow (Schomer 2012) <https://en.wikipedia.org/wiki/Rainbow>.
 ```
 
 Or use backticks for invisible grouping.
