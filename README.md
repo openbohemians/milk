@@ -31,12 +31,13 @@ Content
 
 ### Style
 
-All inline markup is clearly indicated by the use of ` x'content'x ` pattern, where `x` is a special chracter expressing the markup style to use.
+All inline markup is clearly indicated by the use of ` x.content.x ` pattern, where `x` is a special chracter expressing the markup style to use. In addition to Milk's inline styles, Markdown compatable inline markup should be available as a an option.
+
 
 | Markup                     | Markdown                   | Result                   | Render                 |
 |----------------------------|----------------------------|--------------------------|------------------------|
-| `*.bold.*`                 | `*bold*`                   | `<b>strong</b>`          | **bold**               |
-| `'.italic.'`               | `+italic+'`                | `<i>italic</i>`          | *emphasis*             |
+| `*.bold.*`                 | `**bold**`                 | `<b>strong</b>`          | **bold**               |
+| `'.italic.'`               | `*italic*'`                | `<i>italic</i>`          | *emphasis*             |
 | `".quote."`                | `"quotes"`                 | `<q>quote</q>`           | <q>quote</q>           |
 | `_.underline._`            | `_underline_`              | `<u>underline</u>`       | <u>underline</u>       |
 | `-.strikethru.-`           | `~strikethru~`             | `<s>strikethru</s>`      | <s>strikethru</s>      |
@@ -48,7 +49,7 @@ All inline markup is clearly indicated by the use of ` x'content'x ` pattern, wh
 
 ### Hyperlinks
 
-**TODO** <i>I am little but hesitant to move away from the traditional wiki-wiki style of `[[foo]]` here, and yet I have always felt it would a good thing if links were more like real references in technical papers. This still needs some work and some thought.</i>
+**TODO** <i>I am little bit hesitant to move away from the traditional wiki-wiki style of `[[foo]]` here, and yet I have always felt it would a good thing if links were more like real references in technical papers. This still needs some work and some thought.</i>
 
 
 ```
@@ -83,6 +84,42 @@ Footnotes can be per-section or per-document.
 This is not to be taken lightly. (1)
 
 ^1 Unless it '*exists*' to be taken lightly.
+```
+
+### Indexing
+
+Milk support document indexing. Index tags can be free standing or inline. Free-standing index tags can be placed at the start or end of a paragraph block. If it is the only entry in such a block, no paragraph is rendered. Index markup consists a paranthecial with a `#` sign at the head.
+
+
+```
+(# programming)
+```
+
+Or a simple hash tag.
+
+```
+#fun_code
+```
+
+When using hash tag syntax, undersocres are converted to spaces when redered. To subindex, simply separate the subindex from the main index with a comma.
+
+```
+(# programming, Ruby)
+```
+
+In HTML this renders as an anchor `<a id="programming:Ruby" class="index">`. In Latex the `\\index` command is used.
+
+If multiple indexes are required simply use the first segment of the index as the indexes name. The rendering engine takes an option to split indexes up base on the first entry. For example, a command line rendering tool could take the following entries:
+
+```
+(# programming, Ruby)
+(# Examples, programming, Ruby)
+```
+
+And render the first index tag in a separate "Examples" appendex, apart from the prior index tag, using a `--index Examples` option. Note, different rendering engines might handle the configuration in some other way, but the same capability will be present.
+
+```
+This is an #.example.#. 
 ```
 
 
