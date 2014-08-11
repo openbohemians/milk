@@ -1,9 +1,9 @@
 MILK (Markup I LiKe)
 ====================
 
-Makrdown is great. It is concise, simple and easy to learn. Unfortunately it also is missing too many features. A few superset of Markdown have become popular, most notably GFM (GitHub FLavored Markdown) and MultiMarkdown. And yet there are still very obvious omissions, such as text color.
+MILK is both a markup format and a simple yet capable publishing platform. First it is a markup format similar to Markdown, but with many more features that are all well thought out. MILK is also a publishing platform in that it is designed to produce HTML, LaTeX, PDF and ePub documents with enough professionalism for use a resarch papers and book publishing.
 
-Other formats only partially compatible with Markdown go to great lenghts to offer all the bells and whistles. Pandoc and ASCIIdoc stand out. And yet, after perusing their websites, I can't help feeling like I've just been glammered by a vampire. They are rather overwhelmeing, ... haphazard design. 
+Markdown is great. It is concise, simple and easy to learn. Unfortunately it also is missing too many features. A few superset of Markdown have become popular, most notably GFM (GitHub FLavored Markdown) and MultiMarkdown. And yet there are still very obvious omissions, such as indexing and text color. Other formats only partially compatible with Markdown go to great lengths to offer all the bells and whistles. ACIIdoc and MediaWiki in particular stand out. And yet, after perusing their websites, I can't help feeling like I've just been glammered by a vampire. They are rather overwhelmeing, with seemingly haphazard designs. 
 
 ## Structure
 
@@ -328,9 +328,9 @@ Using metadata in a document is done using `\(key1)`.
 TODO: Use `\(key1)` or `(\key1)` ?
 
 
-## Style
+## Customization
 
-### Classes
+### Quick Classes
 
 Most of the time we do not need to get vey fancy with our customizations. A simple extra class will generally do the job. To this end, any text section can be *classified* simply by sarting the text with a `.classname`.
 
