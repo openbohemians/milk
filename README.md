@@ -76,17 +76,39 @@ Rockstar `Alan Turing` (^https://en.wikipedia.org/wiki/Alan_Turing)
 ```
 She was somewhere over the rainbow (Baum 1900)
 
-^Baum 1900, https://en.wikipedia.org/wiki/Rainbow
+__
+^ Baum 1900, https://en.wikipedia.org/wiki/Rainbow
 ```
 
 ### Footnotes
 
-Footnotes can be per-section or per-document.
+Footnotes are explanatory or digressive notes that appear at the bottom of a page, outside of the main body of text to which the refer.
+
+
+To create a footnote, add a note reference inline, then add the footnote following the paragraph.
 
 ```
-This is not to be taken lightly. (1)
+## Some Section
 
-^1 Unless it '*exists*' to be taken lightly.
+This is not to be taken lightly. (1)  Esspecially when they have badges! (2)
+___
+1. Unless it *'exists'* to be taken lightly.
+2. Badges? We don't need no stinken badges!
+```
+
+The actaul numbers are arbitrary and will be reassinged to suite the final format.
+
+### Endnotes
+
+Endnotes are similar to footnotes, but instead of being limited to a page, they can appear anywhere within a document. This flexability is each to acheive because endnotes are handled in a more manual manner than footnotes becuase they are easy enough to create using regular internal links.
+
+```
+Some text anywhere in document. (1 note1)
+
+... any later in the document where you want the endnotes to go ...
+
+1. (^ #note1) Some endnote about it.
+  
 ```
 
 ### Indexing
