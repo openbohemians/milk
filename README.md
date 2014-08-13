@@ -1,14 +1,20 @@
-MILK (Markup I LiKe)
+MILk (Markup I Like)
 ====================
 
-MILK is both a markup format and a simple yet capable publishing platform. First it is a markup format similar to Markdown, but with many more features that are all well thought out. MILK is also a publishing platform in that it is designed to produce HTML, LaTeX, PDF and ePub documents with enough professionalism for use a resarch papers and book publishing.
+MILk is both a markup format and a publishing platform. As a markup format, MILK is similar to Markdown, but with many additional well thought out features. As a publishing platform, MILK is designed to produce HTML, LaTeX, PDF and ePub documents with enough professionalism for use a research papers, ... and book publishing.
 
-**Why a Markup Format?** Markdown is great. It is concise, simple and easy to learn. Unfortunately it also is missing too many features. A few superset of Markdown have become popular, most notably GFM (GitHub FLavored Markdown) and MultiMarkdown. And yet there are still very obvious omissions, such as indexing and text color. Other formats only partially compatible with Markdown go to great lengths to offer all the bells and whistles. ACIIdoc and MediaWiki in particular stand out. And yet, after perusing their websites, I can't help feeling like I've just been glammered by a vampire. They are rather overwhelmeing, with seemingly haphazard designs. 
+**Why a Markup Format?** Markdown is good. It is concise, simple and easy to learn. Unfortunately it also is missing too many features. A few superset of Markdown have become popular, most notably GFM (GitHub FLavored Markdown) and MultiMarkdown. And yet there are still very obvious omissions, such as indexing and text color. Other formats only partially compatible with Markdown go to great lengths to offer all the bells and whistles. ACIIdoc and MediaWiki in particular stand out. And yet, after perusing their websites, I can't help feeling like I've just been glammered by a vampire. They are rather overwhelmeing, with seemingly haphazard designs. 
 
 **Why a Publishing Platform?** There are few, if any, really good publishing options out there. Ethier the feature sets are too .. or the the platform is overly complex. Word still if it is proprietory. MILK is designed to bridge the gap between simple ... complex megaframworks.
 
+## Design
 
-## Structure
+MILK documents are translated to an intermediate XML format, largely compatible with XHTML. This is called the *canonical format* or *MILK XML*. This XML document is then translated into any supported output format.
+
+
+## Templates
+
+MILk ... via templates.
 
 MILK documents follow the [Perfect Document Structure](https://github.com/openbohemians/milk/wiki/Perfect-Document-Structure) design pattern. This means all MILK documents are structured as a hierarchy of ordered lists. These tiers are designated by the use of headers. Consider the following example.
 
