@@ -7,16 +7,23 @@ MILk is both a markup format and a publishing platform. As a markup format, MILK
 
 **Why a Publishing Platform?** There are few, if any, really good publishing options out there. Ethier the feature sets are too .. or the the platform is overly complex. Word still if it is proprietory. MILK is designed to bridge the gap between simple ... complex megaframworks.
 
+## Status
+
+This project is still inthe planning stages.
+
+
 ## Design
 
 MILK documents are translated to an intermediate XML format, largely compatible with XHTML. This is called the *canonical format* or *MILK XML*. This XML document is then translated into any supported output format.
 
 
-## Templates
+## Publishing 
 
-MILk ... via templates.
+### Templates
 
-MILK documents follow the [Perfect Document Structure](https://github.com/openbohemians/milk/wiki/Perfect-Document-Structure) design pattern. This means all MILK documents are structured as a hierarchy of ordered lists. These tiers are designated by the use of headers. Consider the following example.
+MILk documents are ... through the use of templates. You can think of these document classes.
+
+MILk documents follow the [Perfect Document Structure](https://github.com/openbohemians/milk/wiki/Perfect-Document-Structure) design pattern. This means all MILK documents are structured as a hierarchy of ordered lists. These tiers are designated by the use of headers. Consider the following example.
 
 ```rdoc
 = Header 1
@@ -36,12 +43,13 @@ Content
 </article>
 ```
 
-## Inline Markup
+## Markup
 
-### Style
+### Inline Markup
+
+#### Text Styles
 
 All inline markup is clearly indicated by the use of ` x.content.x ` pattern, where `x` is a special chracter expressing the markup style to use. In addition to Milk's inline styles, Markdown compatable inline markup should be available as a an option.
-
 
 | Markup                     | Markdown                   | Result                   | Render                 |
 |----------------------------|----------------------------|--------------------------|------------------------|
@@ -56,7 +64,7 @@ All inline markup is clearly indicated by the use of ` x.content.x ` pattern, wh
 | <tt>\`\`no-markup\`\`</tt> | <tt>\`\`no-markup\`\`</tt> | `no-markup`              | no-markup              |
 
 
-### Hyperlinks
+#### Hyperlinks
 
 **TODO** <i>I am little bit hesitant to move away from the traditional wiki-wiki style of `[[foo]]` here, and yet I have always felt it would a good thing if links were more like real references in technical papers. This still needs some work and some thought.</i>
 
@@ -77,7 +85,7 @@ Or use backticks for invisible grouping.
 Rockstar `Alan Turing` (^https://en.wikipedia.org/wiki/Alan_Turing)
 ```
 
-### References
+#### References
 
 ```
 She was somewhere over the rainbow (Baum 1900)
@@ -86,7 +94,7 @@ __
 ^ Baum 1900, https://en.wikipedia.org/wiki/Rainbow
 ```
 
-### Footnotes
+#### Footnotes
 
 Footnotes are explanatory or digressive notes that appear at the bottom of a page, outside of the main body of text to which the refer.
 
@@ -104,7 +112,7 @@ ___
 
 The actaul numbers are arbitrary and will be reassinged to suite the final format.
 
-### Endnotes
+#### Endnotes
 
 Endnotes are similar to footnotes, but instead of being limited to a page, they can appear anywhere within a document. This flexability is each to acheive because endnotes are handled in a more manual manner than footnotes becuase they are easy enough to create using regular internal links.
 
@@ -117,7 +125,7 @@ Some text anywhere in document. (1 note1)
   
 ```
 
-### Indexing
+#### Indexing
 
 Milk support document indexing. Index tags can be free standing or inline. Free-standing index tags can be placed at the start or end of a paragraph block. If it is the only entry in such a block, no paragraph is rendered. Index markup consists a paranthecial with a `#` sign at the head.
 
@@ -153,10 +161,9 @@ And render the first index tag in a separate "Examples" appendex, apart from the
 This is an #.example.#. 
 ```
 
+### Block Markup
 
-## Block Markup
-
-### Section Tiers
+#### Section Tiers
 
 Section tiers can be *plain* or *enumerated*.
 
@@ -171,7 +178,7 @@ Section tiers can be *plain* or *enumerated*.
 While the style of enumeration can be adjusted via stylesheets, the standard format is multi-point. So, the first `#` will be rendered as `1` and its first `##` will be rendered as `1.1`.
 
 
-### Literals
+#### Literals
 
 TODO: Separate Code literals from general literals?
 
@@ -195,7 +202,7 @@ Unlike more markup where a special brace must be used to indicate the type of co
     fig. 1 (c++) Classic Hello World
 ```
 
-### Quotations
+#### Quotations
 
 Quotations, also kown as *block quotes* translate to the `<blockquote>` HTML tag. They are essentially `div` elements which have a style that sets them apart and helps the reader recognize they are quotes.
 
@@ -204,7 +211,7 @@ Quotations, also kown as *block quotes* translate to the `<blockquote>` HTML tag
 > block quote.
 ```
 
-### Lists
+#### Lists
 
 List can be ordered or unordered. Unorder lists com in two formats, light bullet and heavy bullet.
 
@@ -262,7 +269,7 @@ Roman enumeration can be lower or upper case.
 Alphabetic enumeration can also be lower or upper case.
 
 
-### Definition Lists
+#### Definition Lists
 
 
 ```
@@ -279,7 +286,7 @@ becomes
 </dl>
 ```
 
-### Tables
+#### Tables
 
 Tables come in two forms, simple single-line cell rows and multi-line cell rows.
 
@@ -326,7 +333,7 @@ TOTAL    =A2+B2
 +--------+--------+
 ```
 
-## Metadata
+### Metadata
 
 Documents can be prefaced or appended with metadata. MILK supports simple YAML and JSON.
 
@@ -359,9 +366,9 @@ Using metadata in a document is done using `\(key1)`.
 TODO: Use `\(key1)` or `(\key1)` ?
 
 
-## Customization
+### Customization
 
-### Quick Classes
+#### Quick Classes
 
 Most of the time we do not need to get vey fancy with our customizations. A simple extra class will generally do the job. To this end, any text section can be *classified* simply by sarting the text with a `.classname`.
 
@@ -370,7 +377,7 @@ Most of the time we do not need to get vey fancy with our customizations. A simp
 ```
 
 
-### Implicit Spans
+#### Implicit Spans
 
 Using HTML style markup without specific tag defaults to a `<span>`.
 
@@ -379,7 +386,7 @@ This is <color=green>green</>.
 ```
 
 
-### Tag Augmentation
+#### Tag Augmentation
 
 **IMPORTANT** Customizing markup is not something to be done lightly!!! Use it sparingly and only when you have no other good option. It is much better to simply uses classes and modify a sites stylesheets to produce the desired results. In fact, we debated whether it was even wise to allow this level of customization. Implementors may wish to make it a separate API option which can be turned on or off.
 
@@ -421,7 +428,7 @@ It is even possible to augment all the tags fo a given tag using `<*tag ...>` no
 **IMPORTANT** The relative taggin notation is still be fleshed out and could very well change.
 
 
-## Macros
+### Macros
 
 MILK supports a *macro* language, which allows the document a great deal of control over the final output. Macro usage is easily identified becuase more usage is in the form of XML/XHTML. So, for instance `<b>foo</b>` is using a macro, in this example a macro called `b`, and it just so happens that this macro translates verbtim to HTML.
 
@@ -448,7 +455,7 @@ size: 10
 YAML format is better when the macro is data driven, where as XML/HTML syntax works well when the macro is content oriented.
 
 
-## Escape Characters
+### Escape Characters
 
 To escape `<` and `>` simply repeat them, i.e. `<<` becomes `<` and `>>` becomes `>`.
 
